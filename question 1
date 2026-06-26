@@ -1,0 +1,13 @@
+page_size=int(input("Enter the page size"))
+items=input("Enter the items")
+b=items.split(" ")
+d=list(b)
+e=0
+c=[]
+for x in d:
+    c.append(int(x))
+for i in range(0,len(d)):
+    print(c[e:e+page_size])
+    e+=page_size
+    if i==int(len(d)/page_size):
+        break
