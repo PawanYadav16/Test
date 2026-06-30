@@ -1,0 +1,15 @@
+text=input("enter the string: ")
+k=int(input("enter the key: "))
+a=text.split(" ")
+b=list(a)
+c={}
+d=[]
+for i in b:
+    if i in c:
+        c[i]+=1
+    else:
+        c[i]=1
+for key,value in c.items():
+    if value>=2:
+        d.append(key)
+print(d)
