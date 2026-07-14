@@ -1,0 +1,27 @@
+products=[{"name":"laptop","price":5000,"category":"device","quantity":2},
+          {"name":"processor","price":6000,"category":"hardware","quantity":3},
+          {"name":"cpu","price":7000,"category":"hardware","quantity":4},
+          {"name":"monitor","price":8000,"category":"software","quantity":5},
+          {"name":"keyboard","price":9000,"category":"device","quantity":6},
+          {"name":"mouse","price":10000,"category":"software","quantity":0}]
+
+def low_stock(products,threeshold=5):
+    for i in products:
+        if i["quantity"]<threeshold:
+            yield i
+def Expensive_items(products,min_price=1000):
+    for i in products:
+        if i["price"]>min_price:
+            yield i
+
+instock=list(filter(lambda x: x["quantity"]>0,products))
+
+new_products=list(map(lambda x: (x["price"]*1.10),products))
+print(list(map(int,(new_products))))
+
+print(list(low_stock(products)))
+
+print(list(Expensive_items(products)))
+
+
+print(instock)
