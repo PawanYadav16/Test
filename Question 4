@@ -1,0 +1,5 @@
+temp=[10,40,50,60]
+fahrenheit=list(map(lambda t: (t*9/5)+32,temp))
+hightemp=list(filter(lambda t: t>100,fahrenheit))
+print(fahrenheit)
+print(hightemp)
