@@ -1,0 +1,19 @@
+import json
+student_details=[{"Name": "Priya" ,"Average": 87.33 ,"Grade": "A" },
+                 {"Name": "Raj" ,"Average": 54.00 ,"Grade": "C" }]
+with open("report.txt","w") as fh:
+    fh.write("Name:Priya ,Average:87.33 ,Grade:A")
+    fh.write("\nName:Raj ,Average:54.00 ,Grade:C")
+
+with open("report.json","w") as fh:
+    json.dump(student_details,fh,indent=4)
+
+with open("report.txt","r") as fh:
+    a=fh.readline()
+    b=fh.readline()
+    print(a)
+    print(b)
+
+with open("report.json","r") as fh:
+    c=json.load(fh)
+    print(c,end=" " )
