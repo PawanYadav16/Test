@@ -1,0 +1,9 @@
+def calculate_tax(*salaries):
+    try:
+        taxes=list(map(lambda salary: salary/100*10,salaries))
+        total_tax=sum(taxes)
+
+        return total_tax
+    except TypeError:
+        print("salary has to be a number")
+print(calculate_tax(1000,2000,3000))
